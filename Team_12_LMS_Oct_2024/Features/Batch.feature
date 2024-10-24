@@ -1,0 +1,223 @@
+Feature: Batch Page Navigation
+
+#Background:
+   
+Scenario: Verify Admin Navigate to Batch page successfully
+Given Admin successfully Logged on to the LMS Portal and Admin is on the Dashboard Page
+
+    When Admin Clicks on the Batch menu from the header
+    Then Admin should be in the Manage Batch Page
+    
+#Feature: Batch Page Validation
+    
+ #Scenario: Validate "Title" in Batch Page
+ #
+ #	When Admin Clicks on the Batch menu from the header
+ #	Then Admin should see the "LMS-Learning Management System" Title
+ #
+ #Scenario: Validate "heading" in the Batch Page 
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the "Manage Batch" Heading
+ #
+ #Scenario: Validate disabled "Delete Icon" under the header in
+#the Batch Page
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the disabled "Delete Icon" under the header
+ #
+ #Scenario: Validate pagination in the Batch Page
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the enabled pagination controls under the datatable
+ #
+ #
+ #Scenario: Validate edit icon in each data rows
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the edit icon in each row
+ #
+ #Scenario: validate delete icon in each data rows 
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the delete icon in each row
+ #
+ #Scenario: validate checkbox in each data rows
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should the checkbox in each row
+ #
+ #Scenario: Validate Datatable headers
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the datatable headers Batch name, Batch Description,Batch Status, No Of classes, Program Name, Edit/Delete
+ #
+ #Scenario: Validate "Checkbox" in the Datatable header row
+ #
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the checkbox in the datatable header row
+ #
+ #Scenario: Validate "sort icon" next to all the datatable header
+ #When Admin Clicks on the Batch menu from the header
+ #Then Admin should see the sort icon next to all Datatable headers
+ #
+ #Scenario: Verify sub menu displayed in batch menu bar
+ #Given Admin is on batch page
+ #When Admin clicks Batch on the navigation bar
+ #Then Admin should see sub menu in menu bar as Add New Batch
+ #
+ #Scenario: Validate Admin able to click on the Add new Batch Option
+ #Given Admin is on the Dashboard page
+ #When Admin clicks on "Add New batch" under the "batch" menu bar
+ #Then Admin should see the Batch Details pop up window
+ #
+ #Feature: Add New Batch details pop up
+ #
+ #Background: Admin is on the Add new batch pop up
+ #
+ #Scenario: Validate all the fields exist in pop up
+ #Given Admin is on the Batch Details Pop Up WIndow
+ #When Admin checks all the fields are enabled
+ #Then The pop up should include the fields Batch Name,Number of classes and Description as text box, Program Name as drop down Status as radio button
+ #
+ #Scenario: Validate batchname prefix selected program name
+ #Given Admin is on the Batch Details Pop Up WIndow
+ #When Admin selects program name present in the dropdown
+ #Then Admin should see selected program name in the batch name prefix box
+ #
+ #Scenario: Validate batch name prefix box is not editable
+ #Given Admin is on the Batch Details Pop Up WIndow
+ #When Admin enters alphabets in batch name prefix box
+ #Then Admin should see empty text box
+ #
+ #Scenario: Validate input data only for mandatory fields
+ #Given Admin is on the Batch Details Pop Up WIndow
+ #When Admin enters the data only to the mandatory fiields and clicks save button
+ #Then Admin should get a successful message
+ #
+ #Scenario: validate input data missing for mandatory fields
+ #Given Admin is on the Batch Details Pop Up WIndow
+ #When Admin leaves blank one of the mandatory fields
+ #Then Admin should get a error message on the respective mandatoryfield
+#
+#Scenario: validate save button in Batch details pop up
+#Given Admin is on the Batch Details Pop Up WIndow
+#When Admin enters the valid data to all the mandatory fields and click save button
+#Then Admin should get a succesesful message
+#
+#Scenario: validate cancel button in Batch details pop up
+#Given Admin is on the Batch Details Pop Up WIndow
+#When Admin enters the valid data to all the mandatory fields and click cancel button 
+#Then Admin can see the batch details popup closes without creating any batch
+#
+#Scenario: validate close icon on the batch details pop up
+#Given Admin is on the Batch Details Pop Up WIndow
+#When Admin clicks on the close icon
+#Then batch details pop up closes
+#
+#Feature: Edit icon Validation
+#
+#Scenario: Validate Edit icon feature in any row
+#Given Admin is on the Batch page
+#When Admin clicks the edit icon
+#Then Admin should see the Batch details pop up window
+#
+#Scenario: Validate program name value is disabled to edit
+#Given Admin is on the Batch page
+#When Admin clicks the edit icon
+#Then Admin should see Program name value field is disabled for editing
+#
+#Scenario: Validate batch name value is disabled to edit
+#Given Admin is on the Batch page
+#When Admin clicks the edit icon
+#Then Admin should see batch name value field is disabled for editing
+#
+#Scenario: Validate editing description and No. of classes
+#fields with invalid data in the pop up
+#Given Admin is on the Batch Details Page
+#When Admin Updates any fields with invalid data and click save button
+#Then  Admin should get a error message under the respective field
+#
+#Scenario: validate save button in Batch details pop up
+#Given Admin is on the Batch Details Page
+#When Admin enters the valid data to all the mandatory fields and click save button
+#Then Admin should get a succesesful message for editing the batch
+#
+#Scenario: validate cancel button in Batch details pop up
+#Given Admin is on the Batch Details Page
+#When Admin enters the valid data to all the mandatory fields and click cancel button
+#Then Admin can see the batch details popup closes without editing the batch
+#
+#Feature: Delete batch validation
+#
+#Scenario: validate delete Icon on any row
+#Given Admin is on the Batch page
+#When Admin clicks the delete Icon on any row
+#Then Admin should see the confirm alert box with yes and no button
+#
+#Scenario: Validate yes button on the confirm alert box 
+#Given Admin is on the batch confirm popup page 
+#When Admin clicks on the delete icon and click yes buttton
+#Then Admin should see the successfull message and the batch should be deleted
+#
+#Scenario: validate no button on the confirm alert box 
+#Given Admin is on the batch confirm popup page
+#When Admin clicks on the delete icon and click no buttton
+#Then Admin should see the alert box closed and the batch is not deleted
+#
+#Scenario: validate close Icon on the alert box 
+#Given Admin is on the batch confirm popup page
+#When Admin clicks on the close icon 
+#Then Admin should see the alert box closed
+#
+#Feature: Delete multiple batches with check box
+#
+#Scenario: Validate single row delete with checkbox
+#Given Admin is on the batch page
+#When Admin clicks on the delete icon under the Manage batch header
+#Then The respective row in the table should be deleted
+#
+#Scenario: Validate multiple row delete with checkbox 
+#Given Admin is on the batch page
+#When Admin clicks on the delete icon under the Manage batch header
+#Then The respective row in the table should be deleted
+#
+#Feature: Pagination
+#
+#Scenario: Validate next page link
+#Given Admin is on the batch page
+#When Admin clicks next page link on the data table
+#Then Admin should see the Next enabled link
+#
+#Scenario: validate last page link
+#Given Admin is on the batch page
+#When Admin clicks last page link on the data table
+#Then Admin should see the last page link with next page link disabled on the table 
+#
+#Scenario: validate the backward page link
+#Given Admin is on the batch page
+#When Admin clicks backward page link on the data table
+#Then Admin should see the previous page on the table
+#
+#Scenario: validate the first page link 
+#Given Admin is on the batch page
+#When Admin clicks first page link on the data table
+#Then Admin should see the very first page on the data table
+#
+#Feature: Search Text box validation
+#
+#Scenario: validate serach box functionality
+#Given Admin is on the batch page 
+#When Admin enters the batch name in the serach text box
+#Then Admin should see the filtered batches in the data table
+#
+#Feature: LogOut of the application from the batch page 
+#
+#Scenario: Validate logout option in the header is visible and enabled from the batch page
+#Given Admin is on the batch page
+#When Admin clicks on the logout button
+#Then Admin should see the Login screen Page
+#
+ #
+ #
+ #
+ 
