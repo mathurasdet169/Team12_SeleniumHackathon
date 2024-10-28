@@ -2,6 +2,8 @@ package stepDefinition;
 
 import java.util.Properties;
 
+import org.junit.Assert;
+
 import factory.driverFactory;
 import io.cucumber.java.en.*;
 import pageObjectModel.BatchPage;
@@ -11,125 +13,143 @@ public class BatchSteps {
 	
 	@Given("Admin successfully Logged on to the LMS Portal and Admin is on the Dashboard Page")
 	public void admin_successfully_logged_on_to_the_lms_portal_and_admin_is_on_the_dashboard_page() throws InterruptedException {
-//		 Config = new ConfigReader();
-//         Properties prop  = Config.init_prop();
-// 		init_driver(prop.getProperty("browser"));
-// 	}
 		
-		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+	BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
 	driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
-	
-	//Thread.sleep(2000);
 	batchpageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
-	
-	
+//	Thread.sleep(2000);
+//	Boolean actual=batchpageobject.check_landingPage();
+//	Assert.assertEquals(true,actual);
+//	
 	}
 
 	@When("Admin Clicks on the Batch menu from the header")
 	public void admin_clicks_on_the_batch_menu_from_the_header() {
-	System.out.println("iam from when");   
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		batchpageobject.click_BatchTab();
 	}
 
 	@Then("Admin should be in the Manage Batch Page")
 	public void admin_should_be_in_the_manage_batch_page() {
-		System.out.println("iam from then");
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_batchPage();
+		Assert.assertEquals(actual, true);
+	}
+
+	@Then("Admin should see the LMS-LearningManagementSystem Title")
+	public void admin_should_see_the_lms_learning_management_system_title() {
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.isVisible_LMSTitle();
+		Assert.assertEquals(actual, true);
+	
+	}
+
+	@Then("Admin should see the Manage Batch Heading")
+	public void admin_should_see_the_manage_batch_heading(){
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.isVisible_manageBatchHeading();
+		Assert.assertEquals(actual, true);
+	
+	}
+
+	@Then("Admin should see the disabled Delete Icon under the header")
+	public void admin_should_see_the_disabled_delete_icon_under_the_header() {
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.isVisible_deleteIcon();
+		Assert.assertEquals(actual, true);
 		}
-
-	@Then("Admin should see the {string} Title")
-	public void admin_should_see_the_title(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Admin should see the {string} Heading")
-	public void admin_should_see_the_heading(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
-	@Then("Admin should see the disabled {string} under the header")
-	public void admin_should_see_the_disabled_under_the_header(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
 
 	@Then("Admin should see the enabled pagination controls under the datatable")
 	public void admin_should_see_the_enabled_pagination_controls_under_the_datatable() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.isVisible_pagination();
+		Assert.assertEquals(actual, true);
+			}
 
 	@Then("Admin should see the edit icon in each row")
 	public void admin_should_see_the_edit_icon_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_editIcon();
+		Assert.assertEquals(actual, true);
+		}
 
 	@Then("Admin should see the delete icon in each row")
 	public void admin_should_see_the_delete_icon_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_deleteIcon();
+		Assert.assertEquals(actual, true);
+			}
 
 	@Then("Admin should the checkbox in each row")
 	public void admin_should_the_checkbox_in_each_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_checkboxIcon();
+		Assert.assertEquals(actual, true);
+		}
 
 	@Then("Admin should see the datatable headers Batch name, Batch Description,Batch Status, No Of classes, Program Name, Edit\\/Delete")
 	public void admin_should_see_the_datatable_headers_batch_name_batch_description_batch_status_no_of_classes_program_name_edit_delete() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		batchpageobject.check_tableheaders();
 	}
 
 	@Then("Admin should see the checkbox in the datatable header row")
 	public void admin_should_see_the_checkbox_in_the_datatable_header_row() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_checkboxInHeader();
+		Assert.assertEquals(actual, true);
 	}
 
 	@Then("Admin should see the sort icon next to all Datatable headers")
 	public void admin_should_see_the_sort_icon_next_to_all_datatable_headers() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_sortIconsInTableHeader();
+		Assert.assertEquals(actual, true);
+		}
 
 	@Given("Admin is on batch page")
 	public void admin_is_on_batch_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
+		batchpageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
+		//batchpageobject.click_BatchTab();
+
 	}
 
 	@When("Admin clicks Batch on the navigation bar")
-	public void admin_clicks_batch_on_the_navigation_bar() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void admin_clicks_batch_on_the_navigation_bar() throws InterruptedException {
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		batchpageobject.click_BatchTab();
+		Thread.sleep(2000);
 	}
 
 	@Then("Admin should see sub menu in menu bar as Add New Batch")
 	public void admin_should_see_sub_menu_in_menu_bar_as_add_new_batch() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		batchpageobject.check_addNewBatch();
 	}
 
 	@Given("Admin is on the Dashboard page")
 	public void admin_is_on_the_dashboard_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
+		batchpageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
+			}
 
 	@When("Admin clicks on {string} under the {string} menu bar")
-	public void admin_clicks_on_under_the_menu_bar(String string, String string2) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	public void admin_clicks_on_under_the_menu_bar(String string, String string2) throws InterruptedException {
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		batchpageobject.click_BatchTab();
+		batchpageobject.click_addNewBatch();
+		Thread.sleep(2000);
+	   	}
 
-//	@Then("Admin should see the Batch Details pop up window")
-//	public void admin_should_see_the_batch_details_pop_up_window() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
+	@Then("Admin should see the Batch Details pop up window")
+	public void admin_should_see_the_batch_details_pop_up_window() {
+		BatchPage batchpageobject=new BatchPage(driverFactory.getDriver());
+		boolean actual=batchpageobject.check_batchPopupWindow();
+		Assert.assertEquals(actual, true);
+	}
 
 	@Given("Admin is on the Batch Details Pop Up WIndow")
 	public void admin_is_on_the_batch_details_pop_up_w_indow() {
@@ -245,11 +265,11 @@ public class BatchSteps {
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("Admin should see the Batch details pop up window")
-	public void admin_should_see_the_batch_details_pop_up_window() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+//	@Then("Admin should see the Batch details pop up window")
+//	public void admin_should_see_the_batch_details_pop_up_window() {
+//	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+//	}
 
 	@Then("Admin should see Program name value field is disabled for editing")
 	public void admin_should_see_program_name_value_field_is_disabled_for_editing() {
