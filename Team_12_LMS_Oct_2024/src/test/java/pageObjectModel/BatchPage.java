@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class BatchPage extends BasePage{
-	
+	public static WebDriver driver;  
 public BatchPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub

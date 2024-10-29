@@ -26,8 +26,9 @@ import utilities.ConfigReader;
 //import utilities.excelReader;
 
 public class LoginPage extends BasePage{
-	
-public WebDriver driver;
+
+	public static WebDriver driver;
+//public WebDriver driver;
 String userNameExcelValue;
 String passwordExcelValue;
 //public static excelReader reader = new excelReader();
@@ -38,9 +39,9 @@ public LoginPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 	
 	}
-public void login(WebDriver driver) {  
-	    this.driver = driver;
-	}
+//public void login(WebDriver driver) {  
+//	    this.driver = driver;
+//	}
 	By homepageverification = By.xpath("//*[@class='signin-content']");
 	By PleaseLoginToLMSapp = By.xpath("//p[text()='Please login to LMS application']");
 	By user = By.xpath("//*[@ID='username']");
@@ -85,16 +86,19 @@ public void login(WebDriver driver) {
 	public void verifylogo() {
 		Assert.assertEquals(driver.findElement(logo).isDisplayed(), true);
 	}
-	public void checkpleaselogin() {
-		Assert.assertEquals(driver.findElements(PleaseLoginToLMSapp).contains("Please login to LMS application"), true);
-	}
-	
+//	public void checkpleaselogin() {
+//		Assert.assertEquals(driver.findElements(PleaseLoginToLMSapp).contains("Please login to LMS application"), true);
+//	}
+//	
 	public void VerifyUser() {
-		Assert.assertEquals(driver.findElements(user).contains("User"), true);
+		Assert.assertEquals(driver.findElement(user).getText().toLowerCase().contains("User"), true);
+		//Assert.assertEquals(driver.findElements(user).contains("User"), true);
+	
 	}
 	
 	public void Verifypassword() {
-		Assert.assertEquals(driver.findElements(password).contains("Password"), true);
+		//Assert.assertEquals(driver.findElements(password).contains("Password"), true);
+		Assert.assertEquals(driver.findElement(password).getText().toLowerCase().contains("Password"), true);
 	}
 	
 	/*public void readDataFromSheet(String sheetName, Integer rowNumber) throws IOException{

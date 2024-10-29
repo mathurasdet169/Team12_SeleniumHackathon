@@ -5,10 +5,10 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (
-	       	   features={".//Features/Batch.feature"},
+	       	   features={".//src/test/resources/Features"},
 		 	  
-			  //features={".//FeatureFiles/DataStructure.feature"},
-		      //features={".//FeatureFiles/Array.feature"},
+			 // features={".//src/test/resources/Features/02Dashboard.feature"},
+		     // features={".//FeatureFiles/Array.feature"},
 	          //features={".//FeatureFiles/LinkedList.feature"},
 		      //features={".//FeatureFiles/Stack.feature"},
 		      //features={".//FeatureFiles/Queue.feature"},

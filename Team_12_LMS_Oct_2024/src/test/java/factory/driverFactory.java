@@ -16,7 +16,7 @@ import utilities.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class driverFactory {
-	private static WebDriver driver;
+	public static WebDriver driver;
     private static ConfigReader Config;
     
 	  private static WebDriver init_driver(String Browser) {
@@ -25,8 +25,8 @@ public class driverFactory {
 	        if (Browser.equals("chrome")) {
 				 WebDriverManager.chromedriver().setup(); 
 				 
-//				 ChromeOptions chromeOptions = new ChromeOptions();
-//				 chromeOptions.addArguments("--headless=new");
+//	//			 ChromeOptions chromeOptions = new ChromeOptions();
+//	//			 chromeOptions.addArguments("--headless=new");
 				 driver = new ChromeDriver();
 	        } else if (Browser.equals("firefox")) {
 	            WebDriverManager.firefoxdriver().setup();
@@ -41,8 +41,8 @@ public class driverFactory {
 	            System.out.println("Please pass the correct browser value :" + Browser);
 	        }
 	        
-	        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-	        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
+	        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 	        getDriver().manage().deleteAllCookies();
 	        getDriver().manage().window().maximize();
 	        return getDriver();

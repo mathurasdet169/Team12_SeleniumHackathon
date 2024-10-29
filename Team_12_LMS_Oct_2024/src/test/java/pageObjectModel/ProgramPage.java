@@ -12,7 +12,7 @@ import org.testng.Assert;
 import utilities.ConfigReader;
 
 public class ProgramPage extends BasePage{
-	
+	public static WebDriver driver;
 public ProgramPage(WebDriver driver) {
 		super(driver);
 	}

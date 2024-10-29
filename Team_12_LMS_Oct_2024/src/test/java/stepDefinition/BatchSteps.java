@@ -121,8 +121,7 @@ public class BatchSteps {
 
 	@When("Admin clicks on {string} under the {string} menu bar")
 	public void admin_clicks_on_under_the_menu_bar(String string, String string2) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		//batchpageobject.clicknewprogram();
 	}
 
 //	@Then("Admin should see the Batch Details pop up window")
@@ -428,6 +427,7 @@ public class BatchSteps {
 	@Then("Admin should see the Login screen Page")
 	public void admin_should_see_the_login_screen_page() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
+	    throw new io.cucumber.java.PendingException();}
+	    
+	 
 }

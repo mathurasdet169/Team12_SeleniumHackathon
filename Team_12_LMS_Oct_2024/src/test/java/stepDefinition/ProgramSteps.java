@@ -17,14 +17,14 @@ public class ProgramSteps {
 	ProgramPage  ProgramPageobject=new  ProgramPage (driverFactory.getDriver());
 	String s = RandomStringUtils.randomAlphabetic(8);
 	
-@Given("Admin is on dashboard page after Login")
+@Given("Admin is on dashboard page after Login SM")
 public void admin_is_on_dashboard_page_after_login1() throws InterruptedException {
 		
     driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
 	ProgramPageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
 }
 
-@When("Admin clicks Program on the navigation bar")
+@When("Admin clicks Program on the navigation bar SM")
 public void admin_clicks_on_the_navigation_bar() {
 
 	ProgramPageobject.clickProgram();
@@ -291,7 +291,7 @@ public void records_of_the_newly_created_is_displayed_and_match_the_data_entered
 	Assert.assertEquals(nametextval,s);
 }
 
-@When("Admin Click on {string} button")
+@When("Admin Click on {string} button SM")
 public void admin_click_on_button1(String string) {
 	ProgramPageobject.clickXbtn();
 }
@@ -395,7 +395,7 @@ public void admin_is_on_confirm_deletion_form() {
 	
 }
 
-@When("Admin clicks on {string} button")
+@When("Admin clicks on {string} button SM")
 public void admin_clicks_on_button1(String string) {
 	if(string=="Yes")
 	ProgramPageobject.ClickYes();
@@ -404,17 +404,17 @@ public void admin_clicks_on_button1(String string) {
 			ProgramPageobject.ClickNO();
 }
 
-@Then("Admin can see {string} message")
+@Then("Admin can see {string} message SM")
 public void admin_can_see_message1(String string) {
 	String msg= "Successful Program Deleted";
 	Assert.assertEquals(msg, "Successful Program Deleted");
 }
 
-@When("Admin Searches for {string}")
-public void admin_searches_for1(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+//@When("Admin Searches for {string}")
+//public void admin_searches_for1(String string) {
+//    // Write code here that turns the phrase above into concrete actions
+//    throw new io.cucumber.java.PendingException();
+//}
 
 @Then("There should be zero results.")
 public void there_should_be_zero_results11() {
@@ -422,7 +422,7 @@ public void there_should_be_zero_results11() {
     throw new io.cucumber.java.PendingException();
 }
 
-@Given("Admin is on Program Confirm Deletion Page after selecting a program to delete")
+@Given("Admin is on Program Confirm Deletion Page after selecting a program to deleteSM")
 public void admin_is_on_program_confirm_deletion_page_after_selecting_a_program_to_delete1() {
 	 driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
 		ProgramPageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
@@ -538,6 +538,7 @@ public void admin_is_on_confirmation_form() {
 public void admin_clicks_on_button(String string) {
     
 	Program.button();
+	
 	
 }
 
