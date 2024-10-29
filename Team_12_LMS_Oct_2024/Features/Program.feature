@@ -3,8 +3,8 @@
  
 
   Scenario: Verify that Admin is able to navigate to Program module
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should be navigated to Program module
     #
     #Scenario: Verify any broken links on program page  
@@ -13,8 +13,8 @@
     #Then Admin should not have any broken links for Program module
     
       Scenario: Verify heading in menu bar
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see the heading "LMS - Learning Management System"
     
        #Scenario: Verify other module's name displayed in menu bar
@@ -23,54 +23,54 @@
     #Then Admin should see the module names as in order "Home Program Batch Class Admin Assignment Attendance"
     #
        Scenario: Verify Logout displayed in menu bar
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see Logout in menu bar
     
     #
     Scenario: Verify sub menu displayed in program menu bar
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see sub menu in menu bar as "Add New Program"
     
        Scenario: Verify heading in manage program
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see the heading Manage Program
     
        Scenario: Verify view details of programs
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should able to see Program name, description, and status for each program
     
        Scenario: Verify the Multiple Delete button state 
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see a Delete button in left top is disabled
     #
        Scenario: Verify the Search button 
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see Search bar with text as "Search..."
     #
        Scenario: Verify column header name of data table
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see data table with column header on the Manage Program Page as  Program Name, Program Description, Program Status, Edit/Delete
     
        Scenario: Verify checkbox default state beside Program Name column header
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see checkbox default state as unchecked beside Program Name column header as 
     #
        Scenario: Verify checkboxes default state beside each Program names in the data table 
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see check box default state as unchecked on the left side in all rows against program name 
     #
        Scenario: Verify Sort icon in manage program
-    Given Admin is on dashboard page after Login
-    When Admin clicks Program on the navigation bar
+    Given Admin is on dashboard page after Login SM
+    When Admin clicks Program on the navigation bar SM
     Then Admin should see the sort arrow icon beside to each column header except Edit and Delete 
     
        #Scenario: Verify edit and delete icon in manage program
@@ -151,7 +151,7 @@
     
         Scenario: Verify close window with "X" 
     Given Admin is on Program details form
-    When Admin Click on "X" button
+    When Admin Click on "X" button SM
     Then Admin can see Program Details form disappears
     
     
@@ -209,8 +209,8 @@
     
         Scenario: Verify Admin is able to click 'Yes'
     Given Admin is on Confirm deletion form
-    When Admin clicks on "Yes" button
-    Then Admin can see 'Successful Program Deleted' message
+    When Admin clicks on "Yes" button SM
+    Then Admin can see 'Successful Program Deleted' message SM
     
         #Scenario: Verify Admin is able to deleted program
     #Given Admin is on Program module
@@ -218,7 +218,7 @@
     #Then There should be zero results.
     #
     Scenario: Verify Admin is able to click 'No'
-    Given Admin is on Program Confirm Deletion Page after selecting a program to delete
+    Given Admin is on Program Confirm Deletion Page after selecting a program to deleteSM
     When Admin clicks on "No" button
     Then Admin can see Confirmation form disappears
     #
