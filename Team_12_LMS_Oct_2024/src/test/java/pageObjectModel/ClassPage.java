@@ -11,13 +11,13 @@ import org.openqa.selenium.support.FindBy;
 import factory.driverFactory;
 
 public class ClassPage extends BasePage {
-	
+	public static WebDriver driver;
 	public ClassPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
-	private WebDriver driver = driverFactory.getDriver();
+	//private WebDriver driver = driverFactory.getDriver();
 	
 	String login_page_URL="https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login";
 	String landing_page_URL="https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/";
