@@ -9,6 +9,8 @@ import factory.driverFactory;
 import io.cucumber.java.en.*;
 import pageObjectModel.ProgramPage;
 import utilities.ConfigReader;
+import utilities.LoggerLoad;
+import utilities.excelReader;
 
 public class ProgramSteps {
 
@@ -16,7 +18,7 @@ public class ProgramSteps {
 	String s = RandomStringUtils.randomAlphabetic(8);
 	
 @Given("Admin is on dashboard page after Login")
-public void admin_is_on_dashboard_page_after_login() throws InterruptedException {
+public void admin_is_on_dashboard_page_after_login1() throws InterruptedException {
 		
     driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
 	ProgramPageobject.Login("Sdet@gmail.com","LmsHackathon@2024");
@@ -290,7 +292,7 @@ public void records_of_the_newly_created_is_displayed_and_match_the_data_entered
 }
 
 @When("Admin Click on {string} button")
-public void admin_click_on_button(String string) {
+public void admin_click_on_button1(String string) {
 	ProgramPageobject.clickXbtn();
 }
 
@@ -394,7 +396,7 @@ public void admin_is_on_confirm_deletion_form() {
 }
 
 @When("Admin clicks on {string} button")
-public void admin_clicks_on_button(String string) {
+public void admin_clicks_on_button1(String string) {
 	if(string=="Yes")
 	ProgramPageobject.ClickYes();
 	else
@@ -403,19 +405,19 @@ public void admin_clicks_on_button(String string) {
 }
 
 @Then("Admin can see {string} message")
-public void admin_can_see_message(String string) {
+public void admin_can_see_message1(String string) {
 	String msg= "Successful Program Deleted";
 	Assert.assertEquals(msg, "Successful Program Deleted");
 }
 
 @When("Admin Searches for {string}")
-public void admin_searches_for(String string) {
+public void admin_searches_for1(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
 @Then("There should be zero results.")
-public void there_should_be_zero_results() {
+public void there_should_be_zero_results11() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
@@ -438,6 +440,550 @@ public void admin_can_see_confirmation_form_disappears() {
 @Then("Admin Click on X button")
 public void Admin_Click_on_X_button() {
 	ProgramPageobject.ClickXbtn();
+}
+
+//Kowsika
+
+ProgramPage Program = new  ProgramPage(driverFactory.getDriver());
+
+
+@Given("Admin gives the correct LMS portal URLKPD")
+public void admin_gives_the_correct_lms_portal_urlkpd() {
+    
+driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
+	
+}
+
+@When("Admin is on login pageKPD")
+public void admin_is_on_login_page_kpd() {
+
+	System.out.println("login page");
+    LoggerLoad.info("...Admin is on page....");
+}
+
+@When("Admin enters credentials and clicks login pageKPD")
+public void admin_enters_credentials_and_clicks_login_page_kpd() {
+
+	Program.Login("Sdet@gmail.com","LmsHackathon@2024");
+}
+
+@Then("Admin is on program module after reaching dashboard")
+public void admin_is_on_program_module_after_reaching_dashboard() {
+	
+	
+	Program.Programmodule();
+
+	
+	System.out.println("Program Module clicked");
+	LoggerLoad.info("... Program Module clicked...");
+    
+}
+
+@Given("Admin is on Program moduleKP")
+public void admin_is_on_program_module_kp() {
+	
+	System.out.println("Program Module");
+    LoggerLoad.info("....Program Module....");
+}
+
+@When("Admin selects more than one program by clicking on the checkbox")
+public void admin_selects_more_than_one_program_by_clicking_on_the_checkbox() {
+   
+	Program.Checkbox();
+	System.out.println("Checkbox is clicked");
+	LoggerLoad.info("....Checkbox is clicked....");
+}
+
+@Then("Programs get selected")
+public void programs_get_selected() {
+	
+	System.out.println("Programs selectec");
+	LoggerLoad.info("...Programs selected...");
+   
+	
+}
+
+@Given("Admin is on Program moduleKP1")
+public void admin_is_on_program_module_kp1() {
+	
+
+	Program.Programmodule();
+	System.out.println("Admin is on Program Module");
+	LoggerLoad.info("...Program Module...");
+}
+
+@When("Admin clicks on the delete button on the left top of the program page")
+public void admin_clicks_on_the_delete_button_on_the_left_top_of_the_program_page() {
+     
+	Program.deletebutton();
+}
+
+@Then("Admin lands on Confirmation form")
+public void admin_lands_on_confirmation_form() {
+	
+	System.out.println("Confirmation form");
+	LoggerLoad.info("...Conformation form...");
+    
+}
+
+@Given("Admin is on Confirmation form")
+public void admin_is_on_confirmation_form() {
+	
+	Program.conformbox();
+    
+	
+}
+
+@When("Admin clicks on {string} button")
+public void admin_clicks_on_button(String string) {
+    
+	Program.button();
+	
+}
+
+@Then("Admin can see {string} message")
+public void admin_can_see_message(String string) {
+    
+	Program.mess();
+	
+  System.out.println("Successfully deleted message");
+  LoggerLoad.info("...Successfully deleted...");
+}
+
+
+@Given("Admin is on Program moduleKP3")
+public void admin_is_on_program_module_kp3() {
+	
+	
+	Program.Programmodule();
+	
+	System.out.println("Program Modeule");
+	LoggerLoad.info("..Program Module..");
+}
+
+@When("Admin Searches for {string}")
+public void admin_searches_for(String string) throws Exception {
+	
+//	excelReader reader = new excelReader();	
+//	@SuppressWarnings("static-access")
+//	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/Team_12_data_sheet.xlsx","Sheet1");
+//	String Test = testdata.get(4).get("Name");
+//	
+//	Program.searchbar(Test);
+     
+	Program.searchbar();
+	
+	System.out.println("Searching program");
+	LoggerLoad.info("...Searching program...");
+}
+
+@Then("There should be zero results")
+public void there_should_be_zero_results() {
+    
+	Program.zeroresults();
+	
+	System.out.println("Zero deleted names");
+	LoggerLoad.info("...No display deleted name...");
+}
+
+@Then("Admin can see Programs are still selected and not deleted")
+public void admin_can_see_programs_are_still_selected_and_not_deleted() {
+	
+	Program.Checkbox();
+	Program.deletebutton(); 
+	
+	
+}
+
+@Given("Admin is on Program Confirm Deletion Page after selecting a program to delete")
+public void admin_is_on_program_confirm_deletion_page_after_selecting_a_program_to_delete() {
+    
+	Program.conformbox();
+}
+
+@When("Admin Click on {string} button")
+public void admin_click_on_button(String string) {
+   
+	Program.Nodelete();
+	
+}
+
+@Then("Admin can see Confirm Deletion form disappear")
+public void admin_can_see_confirm_deletion_form_disappear() {
+    
+	Program.deletion();
+}
+
+// Search Bar
+
+@Given("Admin is on Program moduleKPSB")
+public void admin_is_on_program_module_kpsb() {
+	
+	
+	//Program.Programmodule();
+	
+	Program.click();
+	
+	System.out.println("Admin is on Programe Module");
+	LoggerLoad.info("..Program Module...");
+}
+
+@When("Admin enter the program to search By program name")
+public void admin_enter_the_program_to_search_by_program_name() throws Exception {
+	
+	/*excelReader reader = new excelReader();	
+	@SuppressWarnings("static-access")
+	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/team_12_data_sheet.xlsx","Sheet1");
+	String Test0 = testdata.get(0).get("Name");
+    
+	Program.searchname(Test0);*/
+	
+	Program.searchname();
+	
+	System.out.println("Searching name");
+	LoggerLoad.info("...Searching Name..");
+	
+}
+
+@Then("Admin should able to see Program name, description, and status for searched program name")
+public void admin_should_able_to_see_program_name_description_and_status_for_searched_program_name() {
+    
+	
+	Program.zeroresults();
+	
+	System.out.println("Program name box");
+	LoggerLoad.info("...Program name box...");
+      
+}
+
+@Given("Admin is on Program moduleKPSB2")
+public void admin_is_on_program_module_kpsb2() {
+    
+
+	Program.Programmodule();
+	
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+}
+
+@When("Admin enter the program to search By program description")
+public void admin_enter_the_program_to_search_by_program_description() throws Exception {
+	
+	//excelReader reader = new excelReader();	
+	//@SuppressWarnings("static-access")
+	//List<Map<String, String>>  testdata = reader.getData("./src/test/resources/team_12_data_sheet.xlsx","Sheet1");
+//	String Test1 = testdata.get(1).get("Name");
+    
+	//Program.searchpro(Test1);
+	
+	Program.searchpro();
+	
+	System.out.println("Program searching");
+	LoggerLoad.info("...Searching Program...");
+}
+
+@Then("Admin should able to see Program name, description, and status for searched program description")
+public void admin_should_able_to_see_program_name_description_and_status_for_searched_program_description() {
+    
+        Program.zeroresults();
+	
+	System.out.println("See Program name,status,description");
+	LoggerLoad.info("...See Program staus,description, name");
+	
+}
+
+@Given("Admin is on Program moduleKPSB3")
+public void admin_is_on_program_module_kpsb3() {
+	
+	
+	
+	Program.Programmodule();
+	
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+    
+}
+
+@When("Admin enter the program to search By program name that does not exist")
+public void admin_enter_the_program_to_search_by_program_name_that_does_not_exist() throws Exception {
+	
+//	excelReader reader = new excelReader();	
+//	@SuppressWarnings("static-access")
+//	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/team_12_data_sheet.xlsx","Sheet1");
+//	String Test2 = testdata.get(2).get("Name");
+//    
+//	Program.byprogramname(Test2);
+//	
+	Program.byprogramname();
+	System.out.println("Search Program name");
+	LoggerLoad.info("...Search program Name");
+}
+
+@Then("There should be zero results1")
+public void there_should_be_zero_results1() {
+    
+	Program.zeroresults();
+	
+	System.out.println("Program not exist");
+	LoggerLoad.info("..Program not exist..");
+}
+
+@Given("Admin is on Program moduleKPSB4")
+public void admin_is_on_program_module_kpsb4() {
+	
+	
+	Program.Programmodule();
+	
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+    
+}
+
+@When("Admin enter the program to search By partial name of program")
+public void admin_enter_the_program_to_search_by_partial_name_of_program() throws Exception {
+	
+//	excelReader reader = new excelReader();	
+//	@SuppressWarnings("static-access")
+//	List<Map<String, String>>  testdata = reader.getData("./src/test/resources/team_12_data_sheet.xlsx","Sheet1");
+//	String Test3 = testdata.get(3).get("Name");
+//    
+//	Program.partialname(Test3);
+	
+	Program.partialname();
+	
+	System.out.println("Enter partial name");
+	LoggerLoad.info("...Enter Partial name...");
+}
+
+@Then("Admin should able to see Program name, description, and status for searched program name11")
+public void admin_should_able_to_see_program_name_description_and_status_for_searched_program_name11() {
+
+    
+	Program.zeroresults();
+}
+
+//Sorting
+
+@Given("Admin is on Program moduleKPSP")
+public void admin_is_on_program_module_kpsp() {
+	
+
+	Program.Programmodule();
+	
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+    
+}
+
+@When("Admin clicks on Arrow next to program Name")
+public void admin_clicks_on_arrow_next_to_program_name() {
+	
+	Program.sortprogramname();
+	System.out.println("Program ascending/descending order click");
+	LoggerLoad.info("...Program ascending/descending order...");
+   
+}
+
+@Then("Admin See the Program Name is sorted in Ascending order\\/Descending orderKPSP")
+public void admin_see_the_program_name_is_sorted_in_ascending_order_descending_order_kpsp() {
+	
+	System.out.println("Program ascending/descending order click");
+	LoggerLoad.info("...Program ascending/descending order...");
+    
+}
+
+@Given("Admin is on Program moduleKPSP2")
+public void admin_is_on_program_module_kpsp2() {
+	
+	
+	Program.Programmodule();
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+}
+
+@When("Admin clicks on Arrow next to Program DescriptionKPSP2")
+public void admin_clicks_on_arrow_next_to_program_description_kpsp2() {
+	
+	    Program.sortpogdescription();
+	   
+	   System.out.println("Program Description in asc/desc order ");
+	   LoggerLoad.info("...Program Description in asc/desc order...");
+    
+}
+
+@Then("Admin See the program Description is sorted in Ascending order\\/Descending orderKPSP2")
+public void admin_see_the_program_description_is_sorted_in_ascending_order_descending_order_kpsp2() {
+	
+	System.out.println("Program Description in asc/desc order ");
+	   LoggerLoad.info("...Program Description in asc/desc order...");
+}
+
+@Given("Admin is on Program moduleKPSP3")
+public void admin_is_on_program_module_kpsp3() {
+	
+	
+	Program.Programmodule();
+	
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+}
+
+@When("Admin clicks on Arrow next to Program status")
+public void admin_clicks_on_arrow_next_to_program_status() {
+   Program.sortporstatus();
+   
+   System.out.println("Program status in asc/desc order ");
+   LoggerLoad.info("...Program status in asc/desc order...");
+}
+
+@Then("Use See the Program Status is sorted in Ascending order\\/Descending orderKPSP3")
+public void use_see_the_program_status_is_sorted_in_ascending_order_descending_order_kpsp3() {
+    
+	  System.out.println("Program status in asc/desc order ");
+	   LoggerLoad.info("...Program status in asc/desc order...");
+}
+
+//Pagination
+
+@Given("Admin is on Program moduleKPPP")
+public void admin_is_on_program_module_kppp() {
+	
+
+	Program.Programmodule();
+	
+	System.out.println("Admin is on Programe Module");
+	LoggerLoad.info("..Program Module...");
+    
+}
+
+@When("Admin clicks Next page link on the program table")
+public void admin_clicks_next_page_link_on_the_program_table() {
+  
+	boolean pagerright = Program.pageright();
+    Assert.assertTrue(pagerright);
+    
+	//Program.pageright();
+	
+}
+
+@Then("Admin should see the Pagination has {string} active link")
+public void admin_should_see_the_pagination_has_active_link(String string) {
+    
+	System.out.println(" Next Page ");
+	LoggerLoad.info("...Next page...");
+}
+
+
+@When("Admin clicks Last page link")
+public void admin_clicks_last_page_link() {
+	
+	 boolean pgaedoubleclick = Program.pgaedoubleclick();
+	    Assert.assertTrue(pgaedoubleclick);
+   
+	 //Program.pgaedoubleclick();
+	 
+}
+
+@Then("Admin should see the last page record on the table with Next page link are disabled")
+public void admin_should_see_the_last_page_record_on_the_table_with_next_page_link_are_disabled() {
+  
+	System.out.println("Last page");
+   LoggerLoad.info("....Last Page...");
+}
+
+@Given("Admin is on last page of Program module table")
+public void admin_is_on_last_page_of_program_module_table() {
+   
+	System.out.println("Last of Programe Module");
+	LoggerLoad.info("..Last Page of Programe Module..");
+	
+}
+
+@When("Admin clicks Previous page link")
+public void admin_clicks_previous_page_link() {
+	
+	boolean pageleft = Program.pageleft();
+    Assert.assertTrue(pageleft);
+    
+	//Program.pageleft();
+    
+	 System.out.println("Previous page");
+	 LoggerLoad.info("....Previous page...");
+}
+
+@Then("Admin should see the previous page record on the table with pagination has previous page link")
+public void admin_should_see_the_previous_page_record_on_the_table_with_pagination_has_previous_page_link() {
+    
+	System.out.println("Record of Previous Page...");
+	LoggerLoad.info("...Record of Previous Page...");
+	
+}
+
+@Given("Admin is on Previous Program page")
+public void admin_is_on_previous_program_page() {
+    
+	System.out.println("Previous PAge");
+	LoggerLoad.info(".. Previous Page...");
+}
+
+@When("Admin clicks First page link")
+public void admin_clicks_first_page_link() {
+	
+	 boolean pagedoubleleft = Program.pagedoubleleft();
+	    Assert.assertTrue(pagedoubleleft);
+    
+	//Program.pagedoubleleft();
+	
+}
+
+@Then("Admin should see the very first page record on the table with Previous page link are disabled")
+public void admin_should_see_the_very_first_page_record_on_the_table_with_previous_page_link_are_disabled() {
+   
+	Program.pagedisbled();
+	
+	System.out.println("page disabled");
+	LoggerLoad.info("...Page disabled...");
+}
+
+@Given("Admin is on dashboard page after Login")
+public void admin_is_on_dashboard_page_after_login() {
+    
+    Program.Programmodule();
+    
+	System.out.println("Program module");
+	LoggerLoad.info("...Program Module...");
+}
+
+@When("Admin clicks {string} on the navigation barKPP")
+public void admin_clicks_on_the_navigation_bar_kpp(String string) {
+    
+	Program.navigationbar();
+	
+	System.out.println("Navigation bar");
+	LoggerLoad.info("...Navigation bar...");
+}
+
+@Then("Admin should not see any pagination icons and message {string}")
+public void admin_should_not_see_any_pagination_icons_and_message(String string) {
+    
+	System.out.println(" Pagination icons records not found");
+	LoggerLoad.info("...pagination Records Not found...");
+}
+
+@When("Admin clicks {string} on the navigation bar")
+public void admin_clicks_on_the_navigation_bar(String string) {
+    
+    Program.navigationbar();
+	
+	System.out.println("Navigation bar");
+	LoggerLoad.info("...Navigation bar...");
+}
+
+@Then("Admin should see pagination icons disabled")
+public void admin_should_see_pagination_icons_disabled() {
+    
+	System.out.println("pagination disabled");
+	LoggerLoad.info("... PAgination disabled...");
 }
 
 }

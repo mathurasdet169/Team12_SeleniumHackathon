@@ -227,4 +227,145 @@
     When Admin Click on X button
     Then Admin can see Confirmation form disappears
     
-     #
+     #Kowsika
+     #Deleting Mutiple Program
+
+#Feature: Manage Program Functionality
+
+ 
+  Scenario: Verify Admin is able to select multiple programs
+    Given Admin is on Program moduleKP
+    When Admin selects more than one program by clicking on the checkbox
+    Then Programs get selected
+
+  Scenario: Verify Admin is able to delete Multiple programs
+    Given Admin is on Program moduleKP1
+    When Admin clicks on the delete button on the left top of the program page
+    Then Admin lands on Confirmation form
+
+  Scenario: Verify Admin is able to click 'Yes'
+    Given Admin is on Confirmation form
+    When Admin clicks on "Yes" button
+    Then Admin can see "Successful program deleted" message
+
+  Scenario Outline: Verify Admin is able to deleted program
+    Given Admin is on Program moduleKP3
+    When Admin Searches for "Deleted Program names"
+    Then There should be zero results
+    
+    Examples:
+    | SheetName | rownumber|
+    |    Shhet1 |        4 |
+    
+
+  Scenario: Verify Admin is able to click 'No'
+    Given Admin is on Confirmation form
+    When Admin clicks on "No" button
+    Then Admin can see Programs are still selected and not deleted
+
+  Scenario: Verify Admin is able to close the window with "X"
+    Given Admin is on Program Confirm Deletion Page after selecting a program to delete
+    When Admin Click on "X" button
+    Then Admin can see Confirm Deletion form disappear
+ 
+  #Feature: SearchBar Functionality
+
+    
+  Scenario Outline: Verify Admin is able to search results found for program name
+    Given Admin is on Program moduleKPSB
+    When Admin enter the program to search By program name
+    Then Admin should able to see Program name, description, and status for searched program name
+
+    Examples: 
+      | SheetName | rownumber |
+      | Sheet1    |         0 |
+
+  Scenario Outline: Verify Admin is able to search results found for program description
+    Given Admin is on Program moduleKPSB2
+    When Admin enter the program to search By program description
+    Then Admin should able to see Program name, description, and status for searched program description
+
+    Examples: 
+      | SheetName | rownumber |
+      | Sheet1    |         1 |
+
+  Scenario Outline: Verify Admin is able to search results not found
+    Given Admin is on Program moduleKPSB3
+    When Admin enter the program to search By program name that does not exist
+    Then There should be zero results1
+
+    Examples: 
+      | SheetName | rownumber |
+      | Sheet1    |         2 |
+
+  Scenario Outline: Verify Admin is able to search with partial program name
+    Given Admin is on Program moduleKPSB4
+    When Admin enter the program to search By partial name of program
+    Then Admin should able to see Program name, description, and status for searched program name11
+
+    Examples: 
+      | SheetName | rownumber |
+      | Sheet1    |         3 |
+      
+#Feature: Sorting Program  for Programming Functionality
+
+  #Background: 
+    #Admin is on program module after reaching dashboard
+
+
+  Scenario: Verify sorting of Program name in Ascending order/Descending orderKPSP
+    Given Admin is on Program moduleKPSP
+    When Admin clicks on Arrow next to program Name
+    Then Admin See the Program Name is sorted in Ascending order/Descending orderKPSP
+
+  Scenario: Verify sorting of Program Description in Ascending order/Descending orderKPSP2
+    Given Admin is on Program moduleKPSP2
+    When Admin clicks on Arrow next to Program DescriptionKPSP2
+    Then Admin See the program Description is sorted in Ascending order/Descending orderKPSP2
+
+  Scenario: Verify sorting of Program status in Ascending order/Descending orderKPSP3
+    Given Admin is on Program moduleKPSP3
+    When Admin clicks on Arrow next to Program status
+    Then Use See the Program Status is sorted in Ascending order/Descending orderKPSP3
+
+      
+#Feature: Pagination for program Functionality
+
+ # Background: 
+    # Admin is on program module after reaching dashboard
+
+  Scenario: Verify Admin is able to click Next page link
+    Given Admin is on Program moduleKPPP
+    When Admin clicks Next page link on the program table
+    Then Admin should see the Pagination has "Next" active link
+
+  Scenario: Verify Admin is able to click Last page linkKPPP
+    Given Admin is on Program moduleKPPP
+    When Admin clicks Last page link
+    Then Admin should see the last page record on the table with Next page link are disabled
+
+  Scenario: Verify Admin is able to click Previous page link
+    Given Admin is on last page of Program module table
+    When Admin clicks Previous page link
+    Then Admin should see the previous page record on the table with pagination has previous page link
+
+  Scenario: Verify Admin is able to click First page link
+    Given Admin is on Previous Program page
+    When Admin clicks First page link
+    Then Admin should see the very first page record on the table with Previous page link are disabled
+
+  Scenario: Verify pagination when there are no records
+    Given Admin is on dashboard page after Login
+    When Admin clicks "Program" on the navigation barKPP
+    Then Admin should not see any pagination icons and message "No records found"
+
+  Scenario: Verify pagination when there are no records
+    Given Admin is on dashboard page after Login
+    When Admin clicks "Program" on the navigation bar
+    Then Admin should see pagination icons disabled
+
+
+ 
+ 
+ 
+     
