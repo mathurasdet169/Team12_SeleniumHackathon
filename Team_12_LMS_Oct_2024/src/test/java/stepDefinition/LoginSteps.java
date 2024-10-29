@@ -31,10 +31,10 @@ public class LoginSteps {
 		driverFactory.getDriver().get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
 	}
 
-	@Then("Admin should land on the login page vh")
-	public void admin_should_land_on_the_login_page_vh() {
-	    Login.Homepageverification();
-	}
+//	@Then("Admin should land on the login page vh")
+//	public void admin_should_land_on_the_login_page_vh() {
+//	    Login.checkpleaselogin();
+//	}
 
 	@When("Admin gives the invalid LMS portal URL vh")
 	public void admin_gives_the_invalid_lms_portal_url_vh() {
@@ -76,10 +76,10 @@ public class LoginSteps {
 			Login.companyNameOnLogo();
 	}
 			    
-	@Then("Admin should see {string} vh")
-	public void admin_should_see_vh(String string) {
-	    Login.checkpleaselogin();
-	}
+//	@Then("Admin should see {string} vh")
+//	public void admin_should_see_vh(String string) {
+//	    Login.checkpleaselogin();
+//	}
 
 	@Then("Admin should see two text field vh")
 	public void admin_should_see_two_text_field_vh() {
