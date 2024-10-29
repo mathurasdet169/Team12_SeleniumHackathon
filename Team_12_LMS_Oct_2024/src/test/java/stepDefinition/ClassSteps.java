@@ -82,7 +82,7 @@ public class ClassSteps {
 		Assert.assertEquals(classpage.check_ClassPage(), true);
 		System.out.println("in the second scenario");
 	}
-   
+   //changing to stage and commit
 
 @When("Userhb clicks add new class dropdown")
 public void userhb_clicks_add_new_class1_dropdown() throws InterruptedException {

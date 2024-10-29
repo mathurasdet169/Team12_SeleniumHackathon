@@ -116,23 +116,6 @@ public class ClassPage extends BasePage {
 	@FindBy(xpath="//*[@id='programName']/div/div[2]")
 	private WebElement popUpDropDown;
 
-	@FindBy(xpath="//input[@id='batchProg']")
-	private WebElement batchNamePrefixBox;
-
-	@FindBy(xpath="//span[normalize-space()='TeamTwelveJava']")
-	private WebElement DropDownElement;
-
-	@FindBy(css="body > app-root:nth-child(1) > app-batch:nth-child(3) > p-dialog:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > input:nth-child(3)")
-	private WebElement popupBatchCode;
-
-	@FindBy(xpath="//input[@id='batchDescription']")
-	private WebElement BatchDescription;
-
-	@FindBy(xpath="//p-radiobutton[@ng-reflect-input-id='ACTIVE']")
-	private WebElement activeRadioBtn;
-
-	@FindBy(xpath="//input[@id='batchNoOfClasses']")
-	private WebElement No_Of_Classes;
 
 	@FindBy(xpath="//button[@class='p-button-rounded p-button-success p-button p-component ng-star-inserted']")
 	private WebElement saveBtn;

@@ -1,4 +1,5 @@
 #Feature file for class module
+#tostage and commit
 Feature: Class Module
 
  #manage class
