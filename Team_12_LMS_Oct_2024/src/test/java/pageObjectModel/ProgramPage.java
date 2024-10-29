@@ -1,12 +1,15 @@
 package pageObjectModel;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import utilities.ConfigReader;
 
 public class ProgramPage extends BasePage{
 	
@@ -362,6 +365,318 @@ public boolean verifyarrowicon() {
 		return true;
 	else return false;
 	
+}
+//kowsika
+public static ConfigReader file = new ConfigReader();
+
+
+String n ="team";
+  
+
+
+List<WebElement>  aelement,checkboxes, belement;
+
+//@FindBy(xpath="//*[@id=\"username\"]")
+ //public WebElement username;
+
+//@FindBy(xpath="//*[@id=\"password\"]")
+// public WebElement password;
+
+//@FindBy(xpath="//*[@id=\"login\"]")
+//public WebElement login;
+
+
+@FindBy(xpath="//button[@id='program']")
+WebElement Program;
+
+@FindBy(xpath="(//div[@role='checkbox'])")
+WebElement check;
+
+@FindBy(xpath="(//span[@class='p-button-icon pi pi-trash'])[1]")
+WebElement delete;
+
+
+@FindBy(xpath="//span[normalize-space()='Yes']")
+WebElement yess;
+
+@FindBy(xpath="//*[@id=\"filterGlobal\"]")
+WebElement search;
+
+@FindBy(xpath="(//span[normalize-space()='No'])")
+WebElement noo;
+
+@FindBy(xpath="/html/body/app-root/app-batch/p-confirmdialog")
+WebElement delet;
+
+@FindBy(xpath="//p-sorticon[@field='programName']//i[@class='p-sortable-column-icon pi pi-fw pi-sort-alt']")
+WebElement sortname;
+
+@FindBy(xpath="//p-sorticon[@field='description']//i[@class='p-sortable-column-icon pi pi-fw pi-sort-alt']")
+WebElement desc;
+
+@FindBy(xpath="//p-sorticon[@field='status']//i[@class='p-sortable-column-icon pi pi-fw pi-sort-alt']")
+WebElement stat;
+
+
+@FindBy(xpath="//span[@class='p-paginator-icon pi pi-angle-right']")
+WebElement right;
+
+@FindBy(xpath="//span[@class='p-paginator-icon pi pi-angle-double-right']")
+WebElement doright;
+
+@FindBy(xpath="//span[@class='p-paginator-icon pi pi-angle-left']")
+WebElement left;
+
+@FindBy(xpath="//span[@class='p-paginator-icon pi pi-angle-double-left']")
+WebElement douleft;
+
+@FindBy(xpath="//button[@class='p-paginator-prev p-paginator-element p-link p-ripple p-disabled']")
+WebElement disabled;
+
+@FindBy(xpath="//mat-toolbar[@class='mat-toolbar mat-primary mat-toolbar-single-row ng-star-inserted']//div[@class='ng-star-inserted']")
+WebElement navig;
+
+
+/* public void Url() {
+@SuppressWarnings("unused")
+String url = file.getApplicationURL();
+
+driver.get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/login");
+}*/
+
+//public void Username(String user) {
+//	String username =file.getusername();
+//	username.sendKeys(user);
+//}
+//
+//public void Password(String pwd) {
+//	String password =file.getpassword();
+//	password.sendKeys(pwd);
+//}
+//
+//public void clicklog() {
+//	login.click();
+//}
+
+//public void Login(String user,String pwd) {
+	//username.sendKeys(user);
+	//password.sendKeys(pwd);
+	//login.click();
+//}
+
+public void Programmodule() {
+	
+	Program.click();
+	//Program.clear();
+	
+	
+	
+}
+
+public void page() {
+	
+	driver.get("https://lms-frontend-hackathon-oct24-173fe394c071.herokuapp.com/");
+}
+
+public void Checkbox() {
+  
+  checkboxes = driver.findElements(By.xpath("(//div[@role='checkbox'][2])"));
+  System.out.println("Total size of checkboxes:" + checkboxes.size());
+   
+ /* for (int i=0; i<checkboxes.size(); i++)
+  {
+	  if(i<3)
+	  {
+		  System.out.println("Checkbox is displayed at index : " + i + " Clicking on it now");
+		  checkboxes.get(i).click();  
+	  }
+  }*/
+  
+}
+
+public void deletebutton() {
+ 
+ delete.click();
+  
+}
+
+public void conformbox() {
+ 
+ Alert confirm = driver.switchTo().alert();
+ confirm.accept();
+
+ 
+}
+
+public void button() {
+ 
+ yess.click();
+ 
+}
+
+public void mess() {
+ 
+ Alert alert = driver.switchTo().alert(); 
+ String alertmsg=driver.switchTo().alert().getText();
+ utilities.LoggerLoad.info(alertmsg);
+ alert.accept();
+ 
+ 
+}
+
+public void searchbar() {
+ 
+ //search.sendKeys(Test);
+ 
+ search.sendKeys("Testing");
+}
+
+public void zeroresults() {
+ 
+ Alert confirm =driver.switchTo().alert();
+ confirm.dismiss();
+ 
+
+}
+
+public void Nodelete() {
+ 
+ noo.click();
+}
+
+public void deletion() {
+ 
+ delet.click();
+}
+
+//SearchBar
+
+public void click() {
+ 
+//new  WebDriverWait(driver,20).untill(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\\\"filterGlobal\\\"]"))); 
+ search.click();
+}
+
+
+public void searchname() {
+ 
+ //search.sendKeys(Test0);
+ 
+ search.sendKeys("TestingChatbot");
+}
+
+
+
+public void searchpro() {
+ 
+// search.sendKeys(Test1);
+ 
+ search.sendKeys("batch 03");
+}
+
+
+
+public void byprogramname() {
+ 
+ //search.sendKeys(Test2);
+ 
+search.sendKeys("By Program name");
+}
+
+
+public void partialname() {
+  
+ // search.sendKeys(Test3);
+  
+  search.sendKeys("Learning");
+  
+}
+
+
+//Sorting
+
+public void sortprogramname() {
+  
+ sortname.click();
+  
+
+/*   belement = driver.findElements(By.xpath("(//i[@class='p-sortable-column-icon pi pi-fw pi-sort-amount-up-alt'])[1]"));
+    String[] bf = new String[belement.size()];
+
+for(int i=0; i<belement.size();i++) {
+	 bf[i]=belement.get(i).getText().trim();
+	 System.out.println(bf[i]);
+ }
+   	driver.findElement(By.xpath("(//i[@class='p-sortable-column-icon pi pi-fw pi-sort-amount-down'])[1]")).click();
+   	 aelement = driver.findElements(By.xpath("(//i[@class='p-sortable-column-icon pi pi-fw pi-sort-amount-up-alt'])[1]\")"));
+   	String[] af = new String[aelement.size()];
+	 
+for(int i=0; i<aelement.size();i++) {
+	af[i]=aelement.get(i).getText().trim();
+	System.out.println(af[i]);
+	 }
+	 Object a= aelement;
+for(int i=0; i<aelement.size();i++) {
+	Arrays.sort(bf);
+		 
+	 }
+	 
+	 Assert.assertEquals(a, aelement);
+	 System.out.println("Sort by Name is successfull");
+	 Assert.assertNotEquals(belement, aelement);
+	 System.out.println("Sort by Name is successfull");*/
+}
+  
+
+
+public void sortpogdescription() {
+  
+  desc.click();
+}
+
+public void sortporstatus() {
+  
+  stat.click();
+}
+
+//pagination
+
+public boolean pageright() {
+  
+ right.click();
+ return false ;
+
+
+}
+
+public boolean pgaedoubleclick() {
+  
+  doright.click();
+return false;
+
+}
+
+public boolean pageleft() {
+  
+  left.click();
+return false;
+
+}
+
+public boolean pagedoubleleft() {
+  
+  douleft.click();
+return false;
+}
+
+public void pagedisbled() {
+  
+  disabled.click();
+}
+
+public void navigationbar() {
+  
+  navig.click();
 }
 
 
