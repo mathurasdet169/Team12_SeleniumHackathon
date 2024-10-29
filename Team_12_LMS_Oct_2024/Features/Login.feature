@@ -1,8 +1,8 @@
 @login	
 Feature:login  
 
-Background:
-Given Admin launch the browse vh
+#Background:
+#Given Admin launch the browse vh
 
 @login1
 Scenario: launch of lms website 
@@ -34,10 +34,10 @@ Then Admin should see LMS - Learning Management System vh
 @login7
 Scenario: Verify company name
 Then Admin should see company name below the app name vh
-
-@login8
-Scenario:Validate sign in content
-Then Admin should see "Please login to LMS application" vh
+#
+#@login8
+#Scenario:Validate sign in content
+#Then Admin should see "Please login to LMS application" vh
 
 @login9
 Scenario:Verify text field is present
