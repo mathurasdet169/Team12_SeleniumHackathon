@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import org.junit.Assert;
+import org.testng.Assert;
 
 import factory.driverFactory;
 import io.cucumber.java.en.Given;
@@ -215,7 +215,3 @@ public void userhb_is_redirected_to_validate_ui_of_add_a_new_class_popup() {
 
 
 }
-
-
-
-
