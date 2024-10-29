@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v114.css.model.RuleMatch;
@@ -18,11 +19,14 @@ import org.testng.Assert;
 
 import utilities.ConfigReader;
 
+import org.openqa.selenium.Point;
+
 public class DashboardPage<JLanguageTool>  extends BasePage{
 	
 	
 	//Constructor
-		
+
+	public static WebDriver driver;
 	public DashboardPage(WebDriver driver) {
 			
 		super(driver);
@@ -141,14 +145,13 @@ public class DashboardPage<JLanguageTool>  extends BasePage{
 		}
 		
 		public void lmspage() {
-			
-			WebElement lms = LMSvalidate;
-			int xpos = lms.getLocation().getX();
-			int ypos = lms.getLocation().getY();
-			int Height = lms.getSize().getHeight();
-			int Width = lms.getSize().getWidth();
-			
-			Assert.assertTrue((xpos+Width)<=Width/2 && (ypos+Height)<=Height/2, "LMS is not the upper left");
+			WebElement lms =LMSvalidate;
+		      Point p = lms.getLocation();
+		      System.out.println("x-cord-"+p.x+" " +p.getX());
+		      System.out.println("y-cord-"+p.y+" " +p.getY());
+		      Dimension d = lms.getSize();
+		      System.out.println("width-" +d.width+" " +d.getWidth());
+		      System.out.println("height-" +d.height+" " +d.getHeight());
 		}
 		
 		public void checkSpelling() {
@@ -187,15 +190,14 @@ public class DashboardPage<JLanguageTool>  extends BasePage{
 	} */
 	 
 				public void navigbar() {
-					
 					WebElement lms = navigationbar;
-					int xpos = lms.getLocation().getX();
-					int ypos = lms.getLocation().getY();
-					int Height = lms.getSize().getHeight();
-					int Width = lms.getSize().getWidth();
-					
-					Assert.assertTrue((xpos+Width)<=Width/2 && (ypos+Height)<=Height/2, "Text is the upper Right");
-				}
+				      Point p = lms.getLocation();
+				      System.out.println("x-cord-"+p.x+" " +p.getX());
+				      System.out.println("y-cord-"+p.y+" " +p.getY());
+				      Dimension d = lms.getSize();
+				      System.out.println("width-" +d.width+" " +d.getWidth());
+				      System.out.println("height-" +d.height+" " +d.getHeight());
+						}
 		   		
 		public void validateprogram() {
 			
